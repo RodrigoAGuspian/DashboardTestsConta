@@ -3,7 +3,6 @@
   "compatibility_date": "2025-10-08",
   "site": {
     "bucket": "./dist/dashboard-performance/browser",
-    "entry-point": "workers"
   },
   "main": "workers-site/index.js"
 }
