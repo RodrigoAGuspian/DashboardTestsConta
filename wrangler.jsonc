@@ -2,7 +2,7 @@
   "name": "dashboard-test",
   "compatibility_date": "2025-10-08",
   "site": {
-    "bucket": "./dist/dashboard-performance"
+    "bucket": "./dist/dashboard-performance/browser"
   },
   "main": "workers-site/index.js"
 }
