@@ -1,0 +1,29 @@
+<mat-card class="doc-card" *ngIf="markdownPath">
+  <mat-card-header class="doc-header">
+    <div mat-card-avatar class="doc-avatar">
+      <mat-icon color="primary">description</mat-icon>
+    </div>
+
+    <div class="doc-header-text">
+      <mat-card-title>{{ tituloDocumento }}</mat-card-title>
+      <mat-card-subtitle>Artefacto oficial de pruebas</mat-card-subtitle>
+    </div>
+
+    <button
+      mat-flat-button
+      color="primary"
+      matTooltip="Descargar artefacto"
+      (click)="descargarDocumento()"
+      class="download-btn"
+    >
+      <mat-icon>download</mat-icon>
+      Descargar
+    </button>
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-content>
+    <markdown [src]="markdownPath"></markdown>
+  </mat-card-content>
+</mat-card>
