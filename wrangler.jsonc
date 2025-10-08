@@ -1,7 +1,19 @@
 {
-  "name": "dashboard-performance",
+  "name": "dashboard-test",
+
+  "type": "javascript",
+
   "compatibility_date": "2025-10-08",
-  "assets": {
-    "directory": "./dist/dashboard-performance"
-  }
+
+  "site": {
+    "bucket": "./dist/dashboard-performance",
+    "entry-point": "workers-site"
+  },
+
+  "routes": [
+    {
+      "pattern": "https://dashboard-test.rodalejo8.workers.dev/*",
+      "script": "dashboard-test"
+    }
+  ]
 }
