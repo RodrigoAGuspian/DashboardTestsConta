@@ -4,11 +4,5 @@
   "site": {
     "bucket": "./dist/dashboard-performance"
   },
-  "main": "workers-site/index.js",
-  "routes": [
-    {
-      "pattern": "https://dashboard-test.rodalejo8.workers.dev/*",
-      "script": "dashboard-test"
-    }
-  ]
+  "main": "workers-site/index.js"
 }
