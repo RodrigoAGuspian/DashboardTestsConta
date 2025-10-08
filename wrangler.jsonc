@@ -1,19 +1,10 @@
 {
-  // Nombre del Worker
   "name": "dashboard-test",
-
-  // Fecha de compatibilidad
   "compatibility_date": "2025-10-08",
-
-  // Carpeta de archivos estáticos de Angular
   "site": {
     "bucket": "./dist/dashboard-performance"
   },
-
-  // Archivo JS principal que maneja el Worker (SPA routing)
   "main": "workers-site/index.js",
-
-  // Rutas para el Worker
   "routes": [
     {
       "pattern": "https://dashboard-test.rodalejo8.workers.dev/*",
