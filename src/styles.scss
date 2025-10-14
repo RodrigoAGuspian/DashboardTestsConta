@@ -10,12 +10,10 @@ html {
   @include mat.theme((
     color: (
       primary: mat.$azure-palette,
-      secondary: mat.$orange-palette,
       tertiary: mat.$blue-palette,
     ),
     typography: Roboto,
     density: 0,
-    use-system-variables: true
   ));
 }
 
