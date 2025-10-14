@@ -1,7 +1,7 @@
 <mat-card class="doc-card" *ngIf="markdownPath">
   <mat-card-header class="doc-header">
     <div mat-card-avatar class="doc-avatar">
-      <mat-icon color="primary">description</mat-icon>
+      <mat-icon class="icon">description</mat-icon>
     </div>
 
     <div class="doc-header-text">
@@ -10,8 +10,7 @@
     </div>
 
     <button
-      mat-flat-button
-      color="primary"
+      matFab extended
       matTooltip="Descargar artefacto"
       (click)="descargarDocumento()"
       class="download-btn"
@@ -19,6 +18,7 @@
       <mat-icon>download</mat-icon>
       Descargar
     </button>
+
   </mat-card-header>
 
   <mat-divider></mat-divider>

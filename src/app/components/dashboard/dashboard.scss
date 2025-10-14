@@ -3,9 +3,9 @@
 }
 
 .sidenav {
-  width: 260px;
+  Width: 260px;
   background: var(--mat-sys-surface);
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  border-right: 1px solid var(--mat-sys-outline-variant); 
   display: flex;
   flex-direction: column;
 }
@@ -19,11 +19,12 @@
 }
 
 .logo-icon {
-  font-size: 32px;
+  /* CAMBIO: Color primario para el ícono de branding */
+  color: var(--mat-sys-on-primary-container); 
 }
 
 .mat-nav-list a.mat-list-item {
-  display: flex;      
+  display: flex;
   align-items: center;
   gap: 12px;
   height: 48px;
@@ -31,38 +32,41 @@
   margin: 4px 8px;
   padding-left: 12px;
   text-decoration: none;
-  color: inherit;
   transition: background 0.2s ease, color 0.2s ease;
+  color: var(--mat-sys-on-surface); 
+  background-color: transparent;
 }
 
-.nav-icon {
+.nav-icon{
+  color: var(--mat-sys-on-primary-container); 
+}
+
+.mat-nav-list a.mat-list-item .nav-icon {
   font-size: 22px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 24px;
   height: 24px;
+  color: var(--mat-sys-primary); 
   opacity: 0.9;
-  color: inherit;
 }
 
-
-.mat-nav-list a.mat-list-item.active {
-  background-color: var(--mat-sys-color-tertiary-container);
-  color: var(--mat-sys-color-on-tertiary-container);
-
+.mat-nav-list a.mat-list-item:hover {
+  background-color: color-mix(in srgb, var(--mat-sys-surface) 100%, var(--mat-sys-primary) calc(var(--mat-sys-hover-state-layer-opacity) * 100));
+  color: var(--mat-sys-on-surface); 
+  
   .nav-icon {
-    color: var(--mat-sys-color-on-tertiary-container);
+    color: var(--mat-sys-primary) !important; 
   }
 }
 
-/* Hover */
-.mat-nav-list a.mat-list-item:hover {
-  background-color: var(--mat-sys-primary-container);
-  color: var(--mat-sys-on-primary-container);
+.mat-nav-list a.mat-list-item.active {
+  background-color: var(--mat-sys-tertiary-container);
+  color: var(--mat-sys-on-tertiary-container);
 
   .nav-icon {
-    color: var(--mat-sys-on-primary-container);
+  color: var(--mat-sys-on-tertiary-container);
   }
 }
 
@@ -70,7 +74,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  box-shadow: var(--mat-sys-level2);
+  box-shadow: var(--mat-sys-level2); 
 }
 
 .spacer {
@@ -91,12 +95,3 @@
   height: 100%;
 }
 
-.nav-icon {
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-}

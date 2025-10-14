@@ -19,7 +19,7 @@
 }
 
 .doc-avatar {
-  background: var(--mat-sys-primary-container);
+  background: var(--mat-sys-secondary-container);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -64,4 +64,8 @@ markdown {
     width: 100%;
     justify-content: center;
   }
+}
+
+.icon{
+  background-color: var(--mat-sys-secondary-container);
 }

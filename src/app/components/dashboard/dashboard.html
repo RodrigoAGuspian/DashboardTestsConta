@@ -2,12 +2,10 @@
   <mat-sidenav #sidenav class="sidenav" mode="side" opened>
     <div class="sidenav-header">
       <mat-icon class="logo-icon">fact_check</mat-icon>
-      <h3>QA Dashboard</h3>
+      <h3 class="mat-h3">QA Dashboard</h3>
     </div>
 
-    <mat-divider></mat-divider>
-
-    <mat-nav-list>
+    <mat-nav-list class="nav-list-m3">
       <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <div class="nav-item-content">
           <mat-icon class="nav-icon">home</mat-icon>
@@ -54,12 +52,12 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-toolbar color="primary" class="main-toolbar">
+
+    <mat-toolbar class="main-toolbar mat-elevation-z1">
       <button mat-icon-button (click)="sidenav.toggle()" class="menu-btn">
         <mat-icon>menu</mat-icon>
       </button>
-      <span class="toolbar-title">Dashboard de QA</span>
-
+      <span class="toolbar-title mat-body-large">Dashboard de QA</span>
       <span class="spacer"></span>
     </mat-toolbar>
 
