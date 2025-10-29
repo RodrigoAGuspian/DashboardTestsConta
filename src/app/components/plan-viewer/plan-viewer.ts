@@ -8,6 +8,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTabsModule } from '@angular/material/tabs';
+
+
+import pruebasConfig from '../../assets/pruebas-config.json';
+
+interface PruebasConfig {
+  [key: string]: {
+    titulo: string;
+    documento: string;
+  };
+}
+
+
+
 
 @Component({
   selector: 'app-plan-viewer',
@@ -19,34 +33,45 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     MatButtonModule,
     MatDividerModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatTabsModule
   ],
   templateUrl: './plan-viewer.html',
-  styleUrls: ['./plan-viewer.scss'] // 👈 corregido: plural y correcto
+  styleUrls: ['./plan-viewer.scss']
 })
+
 export class PlanViewerComponent implements OnInit, OnDestroy {
+
+  
+  pconfig = pruebasConfig;
+  
   markdownPath = '';
   tituloDocumento = '';
   private routeSub?: Subscription;
+  ejemplos: { nombre: string; path: string }[] = [];
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    // Escucha los cambios de ruta para actualizar el documento dinámicamente
     this.routeSub = this.route.paramMap.subscribe((params: ParamMap) => {
-      const tipo = params.get('tipo');
-      const rutas: Record<string, string> = {
-        unitarias: 'assets/plan_pruebas_unitarias.md',
-        funcionales: 'assets/plan_pruebas_funcionales.md',
-        e2e: 'assets/plan_pruebas_e2e.md',
-        rendimiento: 'assets/plan_pruebas_rendimiento.md',
-        seguridad: 'assets/plan_pruebas_seguridad.md',
-        'carga-estres': 'assets/plan_pruebas_carga_estres.md'
-      };
+    const tipo = params.get('tipo') as keyof typeof this.pconfig;
+    const entry = this.pconfig[tipo];
 
-      this.markdownPath = rutas[tipo ?? ''] || '';
-      this.tituloDocumento = `Plan de Pruebas ${tipo ? tipo.replace('-', ' ').toUpperCase() : ''}`;
-    });
+    if (entry) {
+      this.markdownPath = entry.documento;
+      this.tituloDocumento = entry.titulo;
+
+      // Cargar ejemplos dinámicamente
+      this.ejemplos = Object.entries(entry.ejemplos || {}).map(([nombre, path]) => ({
+        nombre: nombre.charAt(0).toUpperCase() + nombre.slice(1), // "angular" → "Angular"
+        path
+      }));
+    } else {
+      this.markdownPath = '';
+      this.tituloDocumento = '';
+      this.ejemplos = [];
+    }
+  });
   }
 
   descargarDocumento(): void {

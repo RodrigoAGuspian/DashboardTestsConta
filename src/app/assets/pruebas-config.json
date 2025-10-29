@@ -1,0 +1,52 @@
+{
+  "unitarias": {
+    "titulo": "Pruebas Unitarias",
+    "descripcion": "Evalúan el correcto funcionamiento de componentes o métodos individuales. En este proyecto se aplican tanto al backend (servicios de Spring Boot) como al frontend (componentes de Angular).",
+    "documento": "assets/plan_pruebas_unitarias.md",
+    "ejemplos": {
+      "angular": "assets/unitarias_angular.md",
+      "spring": "assets/unitarias_spring.md"
+    }
+  },
+  "funcionales": {
+    "titulo": "Pruebas Funcionales",
+    "descripcion": "Verifican que el sistema cumpla con los requisitos funcionales definidos, principalmente desde el backend del sistema contable.",
+    "documento": "assets/plan_pruebas_funcionales.md",
+    "ejemplos": {
+      "spring": "assets/funcionales_spring.md"
+    }
+  },
+  "e2e": {
+    "titulo": "Pruebas End-to-End",
+    "descripcion": "Simulan escenarios reales de usuario para validar la comunicación entre el frontend (Angular) y el backend (Spring Boot).",
+    "documento": "assets/plan_pruebas_e2e.md",
+    "ejemplos": {
+      "angular": "assets/e2e_angular.md"
+    }
+  },
+  "rendimiento": {
+    "titulo": "Pruebas de Rendimiento",
+    "descripcion": "Evalúan el tiempo de respuesta, estabilidad y uso de recursos de las API y procesos del módulo de inventarios.",
+    "documento": "assets/plan_pruebas_rendimiento.md",
+    "ejemplos": {
+      "spring": "assets/rendimiento_spring.md"
+    }
+  },
+  "seguridad": {
+    "titulo": "Pruebas de Seguridad",
+    "descripcion": "Analizan vulnerabilidades del backend y validaciones de entrada en el frontend, priorizando la protección de datos contables.",
+    "documento": "assets/docs/plan_pruebas_seguridad.md",
+    "ejemplos": {
+      "spring": "assets/seguridad_spring.md"
+    }
+  },
+  "carga-estres": {
+    "titulo": "Pruebas de Carga y Estrés",
+    "descripcion": "Miden el comportamiento del módulo de inventarios bajo diferentes niveles de carga y condiciones extremas.",
+    "documento": "assets/plan_pruebas_carga_estres.md",
+    "ejemplos": {
+      "spring": "assets/carga_estres_spring.md",
+      "herramientas": "assets/carga_estres_k6.md"
+    }
+  }
+}

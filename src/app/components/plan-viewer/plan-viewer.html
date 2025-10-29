@@ -1,29 +1,33 @@
 <mat-card class="doc-card" *ngIf="markdownPath">
   <mat-card-header class="doc-header">
     <div mat-card-avatar class="doc-avatar">
-      <mat-icon class="icon">description</mat-icon>
+      <mat-icon>description</mat-icon>
     </div>
-
     <div class="doc-header-text">
       <mat-card-title>{{ tituloDocumento }}</mat-card-title>
-      <mat-card-subtitle>Artefacto oficial de pruebas</mat-card-subtitle>
+      <mat-card-subtitle>Artefacto de pruebas</mat-card-subtitle>
     </div>
-
-    <button
-      matFab extended
-      matTooltip="Descargar artefacto"
-      (click)="descargarDocumento()"
-      class="download-btn"
-    >
-      <mat-icon>download</mat-icon>
-      Descargar
+    <button mat-fab extended matTooltip="Descargar artefacto" (click)="descargarDocumento()" class="download-btn">
+      <mat-icon>download</mat-icon> Descargar
     </button>
-
   </mat-card-header>
 
   <mat-divider></mat-divider>
 
-  <mat-card-content>
-    <markdown [src]="markdownPath"></markdown>
-  </mat-card-content>
+  <!-- Pestañas: Artefacto + Ejemplos -->
+  <mat-tab-group animationDuration="0ms">
+    <!-- Pestaña: Artefacto principal -->
+    <mat-tab label="Artefacto">
+      <mat-card-content class="tab-content">
+        <markdown [src]="markdownPath"></markdown>
+      </mat-card-content>
+    </mat-tab>
+
+    <!-- Pestañas dinámicas: Ejemplos -->
+    <mat-tab *ngFor="let ejemplo of ejemplos" [label]="ejemplo.nombre">
+      <mat-card-content class="tab-content">
+        <markdown [src]="ejemplo.path"></markdown>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
 </mat-card>
