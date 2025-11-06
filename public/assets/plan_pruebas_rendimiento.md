@@ -1,6 +1,6 @@
-**Pruebas de Seguridad**
+**Pruebas de Rendimiento**
 
-Plan de Pruebas de Seguridad
+Plan de Pruebas de Rendimiento
 
 Pasantía: Prototipo de ambiente de pruebas para los módulos de
 Inventarios del "Software contable para uso educativo en el programa de
