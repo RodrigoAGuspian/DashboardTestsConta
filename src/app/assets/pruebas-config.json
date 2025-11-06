@@ -35,7 +35,7 @@
   "seguridad": {
     "titulo": "Pruebas de Seguridad",
     "descripcion": "Analizan vulnerabilidades del backend y validaciones de entrada en el frontend, priorizando la protección de datos contables.",
-    "documento": "assets/docs/plan_pruebas_seguridad.md",
+    "documento": "assets/plan_pruebas_seguridad.md",
     "ejemplos": {
       "spring": "assets/seguridad_spring.md"
     }
